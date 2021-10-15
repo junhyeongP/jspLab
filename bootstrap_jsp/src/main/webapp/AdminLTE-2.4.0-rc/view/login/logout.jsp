@@ -2,13 +2,14 @@
 <%@ page import="bootstrap_jsp.Cookies"%>
 <%
 	response.addCookie(Cookies.createCookie("AUTH", "", "/", 0));
+	session.invalidate();
 %>
 <html>
 <head>
 <title>로그아웃</title>
 </head>
 <body>
-<jsp:forward page="loginForm.jsp" />
 
+<% response.sendRedirect("loginForm.jsp");%>
 </body>
 </html>

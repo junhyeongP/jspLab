@@ -7,9 +7,9 @@
 	if (id.equals(password)) {
 		// ID와 암호가 같으면 로그인에 성공한 것으로 판단.
 		response.addCookie(Cookies.createCookie("AUTH", id, "/", -1));
+		session.setAttribute("MEMBERID", id);
 %>
-
-<jsp:forward page="../main/index.jsp" />
+<% response.sendRedirect("../main/index.jsp");%>
 <html>
 <head>
 <title>로그인성공</title>
